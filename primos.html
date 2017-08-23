@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         /* Exibir todos os números primos menores que 1000 */
+         
+         var inicio = Date.now();
+
+         document.write('2<br />');
+         
+         // Caminha somente pelos números ímpares
+         for(var n = 3; n < 100000; n += 2) {
+
+            var primo = true;
+            
+            for(var menor = 3; menor < n; menor++) {
+               
+               if(n % menor == 0) {
+                  primo = false;
+                  break; // Não precisa continuar testando esse número
+               }
+
+            }
+
+            if (primo) {
+               document.write(n + '<br />');
+            }
+
+         }
+
+         document.write(Date.now() - inicio);
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

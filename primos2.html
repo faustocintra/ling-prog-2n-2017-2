@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         /* Exibir todos os números primos menores que 1000 */
+         
+         var inicio = Date.now();
+
+         var primos = []; // Array vazio
+         
+         // push() sempre coloca o novo elemento no FIM do vetor
+         primos.push(2);
+         
+         // Caminha somente pelos números ímpares
+         for(var n = 3; n < 100000; n += 2) {
+
+            var primo = true;
+            
+            for(var i = 0; i < primos.length; i++) {
+               
+               if(n % primos[i] == 0) {
+                  primo = false;
+                  break; // Não precisa continuar testando esse número
+               }
+
+            }
+
+            if(primo) {
+               // Coloca n ao final do vetor primos
+               primos.push(n);
+            }
+
+         }
+
+         // Imprime na página
+         for(var i = 0; i < primos.length; i++) {
+            document.write(primos[i] + '<br />');
+         }
+
+         document.write(Date.now() - inicio);
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
