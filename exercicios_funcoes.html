@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         /*
+            Escreva uma função que receba dois números e retorne:
+               0, se os dois números forem iguais;
+               -1, se o primeiro número for menor;
+               1, se o segundo número for maior.
+         */
+         function compara(num1, num2) {
+            if(num1 == num2) {
+               return 0;
+            }
+            else if(num1 > num2) {
+               return -1;
+            }
+            else {
+               return 1;
+            }
+         }
+
+         var n = 4;
+
+         document.write(compara(4, n) + '<br />');
+         document.write(compara(8, n) + '<br />');
+         document.write(compara(1, n) + '<br />');
+
+         /*
+            Escreva uma função que receba um texto e um número
+            e escreva no documento o texto o número de vezes
+            indicado por número.
+         */
+         function repete(texto, vezes) {
+            
+            // Não funciona (NÃO É PYTHON!)
+            //document.write((texto * vezes) + '<br />') ;
+            
+            for(var i = 1; i <= vezes; i++) {
+               document.write(texto);
+            }
+
+         }
+
+         repete('-', 10);
+         document.write('<br />');
+         repete('0T', 5);
+
+         /*
+            Escreva uma função que receba um numero e retorne 
+            true caso ele seja par e false quando for ímpar
+         */
+         function ehPar(n) {
+            return n % 2 == 0;
+            /*
+            if(n % 2 == 0) {
+               return true;
+            }
+            else {
+               return false;
+            }
+            */
+         }
+         document.write(ehPar(0) + '<br />');
+         document.write(ehPar(-17) + '<br />');
+
+         /*
+            Escreva uma função que saúde o usuário com a frase
+            "Bem-vindo ao Javascript".
+         */
+         function saudacao() {
+            alert('Bem-vindo ao Javascript');
+         }
+         saudacao();
+
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
