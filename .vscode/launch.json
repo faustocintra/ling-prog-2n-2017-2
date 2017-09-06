@@ -4,6 +4,7 @@
       
       {
          "type": "chrome",
+         "runtimeExecutable": "chromium-dev",
          "request": "launch",
          "name": "Launch Chrome against localhost",
          "url": "http://localhost:8080",

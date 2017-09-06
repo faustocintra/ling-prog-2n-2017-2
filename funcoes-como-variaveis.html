@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         //alert(soma(33, 20));
+         
+         // A função é anônima
+         
+         /*
+         var soma = function(n1, n2) {
+            return n1 + n2;
+         }
+         */
+
+         /*function soma (n1, n2) {
+            return n1 + n2;
+         }*/
+
+         function exibeErro(erro) {
+            console.log(erro);
+            alert('ERRO: ' + erro);
+         }
+
+         function exibeResultado(res) {
+            alert('O resultado é ' + res);
+         }
+
+         function divide(n1, n2, seSucesso, seErro) {
+            var chamaFunc;            
+            
+            if(n2 == 0) {
+               chamaFunc = seErro;
+            }
+            else{
+               chamaFunc = seSucesso;
+            }
+            
+            chamaFunc(n1 / n2);
+         }
+
+         divide(45, 4, exibeResultado, exibeErro);
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

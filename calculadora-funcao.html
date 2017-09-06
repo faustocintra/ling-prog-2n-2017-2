@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         function calc(n1, n2, oper) {
+
+            // oper é um parâmetro opcional.
+            // Se não for passado, assumimos um valor padrão
+            if(oper == undefined) {
+               oper = '+';
+            }
+
+            switch(oper) {
+               case '+':
+                  return n1 + n2;
+                  break;
+
+               case '-':
+                  return n1 - n2;
+                  break;
+
+               case '*':
+                  return n1 * n2;
+                  break;
+               
+               case '/':
+                  return n1 / n2;
+                  break;
+
+               default:
+                  return 'OPERADOR INVÁLIDO: ' + oper;
+            }
+
+         }
+         
+         var num1 = parseFloat(prompt('Informe um número:'));
+         var num2 = parseFloat(prompt('Informe outro número'));
+         var op = prompt('Informe a operação aritmética (+, -, * ou /)');
+
+         // Se num1 não for numérico, assume o valor 0
+         if(isNaN(num1)) {
+            num1 = 0;
+         }
+
+         // Se num2 não for numérico, assume o valor 0
+         if(isNaN(num2)) {
+            num2 = 0;
+         }
+
+         if(op == '+') {
+            alert('O resultado da operação (soma) é ' + calc(num1, num2));
+         }
+         else {
+            alert('O resultado da operação é ' + calc(num1, num2, op));
+         }
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

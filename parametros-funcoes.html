@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         function quebraLinha(t1, t2) {
+            document.write(t1 + '<br />');
+            
+            // Se t2 não tiver sido informado
+            if(t2 == undefined) {
+               t2 = '(Segundo parâmetro não foi passado)';
+            }
+
+            document.write(t2 + '<br />');
+         }
+
+         quebraLinha('Primeira linha');
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

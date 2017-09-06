@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title>Arquivo modelo HTML</title>
+
+   <script type="text/javascript">
+      var cor = 'vermelho';
+
+      function imprimeCor() {
+         var cor = 'azul';
+         document.write(cor + '<br />');
+
+         document.write('<br />O valor de i (antes) é ' + i + '<br />');
+
+         for (var i = 1; i <= 10; i++) {
+            document.write('.');
+         }
+         // Qual será o valor de i?
+         document.write('<br />O valor de i (depois) é ' + i + '<br />');
+
+      }
+
+      imprimeCor();
+      document.write(cor + '<br />');
+      document.write('<br />O valor de i (fora) é ' + i + '<br />');
+   </script>
+
+</head>
+
+<body>
+   <h1>Título da página</h1>
+   <p>Isto é um parágrafo.</p>
+</body>
+
+</html>
