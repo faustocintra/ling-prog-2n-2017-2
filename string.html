@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var str = 'O rato roeu a roupa do rei de Roma';
+
+         // charAt(): retorna o caractere na posição passada
+         console.log('charAt(4): ' + str.charAt(4));
+
+         // concat(): funde duas strings em uma terceira
+         var ditado = str.concat(' e a rainha ruim rasgou o resto');
+         console.log('concat(): ' + ditado);
+
+         // indexOf(): retorna a primeira posição da substring passada dentro da string,
+         // ou -1 se não encontrar
+         console.log('indexOf("roupa"): ' + str.indexOf('roupa'));
+         console.log('indexOf("camisa"): ' + str.indexOf('camisa'));
+
+         // toUppercase(): converte a string para maiúsculas, retornando uma nova string
+         var maiusc = str.toUpperCase();
+         console.log('toUppercase(): ' + maiusc);
+
+         // toLowercase(): converte a string para minúsculas, retornando uma nova string
+         var minusc = str.toLowerCase();
+         console.log('toLowercase(): ' + minusc);
+
+         // repeat(): repete a string o número de vezes passado
+         var rep = str.repeat(3);
+         console.log('repeat(3): '.concat(rep));
+         console.log('"-".repeat(80): ' + '-'.repeat(80));
+
+         // slice(): recorta uma parte da string, gerando outra. É necessário
+         // passar as posições de início e (opcionalmente) do fim do recorte
+         console.log('slice(14, 19): '.concat(str.slice(14, 19)));
+         console.log('slice(14): '.concat(str.slice(14)));
+
+         // split(): divide a string em vários pedaços, de acordo com o separador
+         // passado, e retorna um vetor com os pedaços
+         console.log("split(' '): ".concat(str.split(' ')));
+         console.log("split('r'): ".concat(str.split('r')));
+
+         // trim(): retira espaços em branco do início e do final da string
+         var fonte = '      ditado popular   ';
+         console.log('sem trim(): ' + str + ' (' + fonte + ')');
+         console.log('com trim(): ' + str + ' (' + fonte.trim() + ')');
+
+         // replace(): substitui uma parte da string por outra. A parte da string
+         // a ser substituída deve vir entre /barras/
+         console.log('replace(/roupa/, "rapadura"): ' + str.replace(/roupa/, 'rapadura'));
+
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

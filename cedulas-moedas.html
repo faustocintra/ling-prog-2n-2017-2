@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         function contar(quantia) {
+            var resto, res, lista = '', especie = 'nota(s)';
+
+            var especies = [
+               100, 50, 20, 10, 5, 2,
+               1, 0.50, 0.25, 0.10, 0.05, 0.01
+            ];
+            
+            for(var i = 0; i < especies.length; i++) {
+               
+               // Menor que R$ 2 vira moeda
+               if(especies[i] < 2) {
+                  especie = 'moeda(s)';
+               }
+               
+               // Divide a quantia restante pelo valor da nota ou moeda
+               // na posição atual do vetor
+               res = Math.floor(quantia / especies[i]); // Divisão inteira
+               
+               // Só listamos a nota ou moeda se sua quantidade for maior que zero
+               if(res > 0) {
+                  lista += res + ' ' + especie + ' de R$ ' + especies[i] + '<br />';
+                  
+                  // Retiramos da quantia o montante representado pelas notas/moedas
+                  // encontradas
+                  quantia -= res * especies[i];
+               }
+
+               
+            }
+
+            return lista;
+
+         }
+
+         var q = parseFloat(prompt('Informe a quantia:'));
+
+         document.write(contar(q));
+
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

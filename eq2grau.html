@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var eq2grau = {
+
+            a: 3,
+            b: 2,
+            c: 1,
+
+            extrairRaizes: function() {
+
+               var delta = (this.b * this.b) - (4 * this.a * this.c);
+
+               // Delta negativo, não há solução.
+               // Retornamos vetor vazio
+               if(delta < 0) {
+                  return [];
+               }
+
+               var raiz1 = (-this.b + Math.sqrt(delta)) / 2 * this.a;
+
+               // Se delta == 0, só há uma raiz possível
+               if(delta == 0) {
+                  return [raiz1];
+               }
+
+               var raiz2 = (-this.b - Math.sqrt(delta)) / 2 * this.a;
+
+               return [raiz1, raiz2];
+
+            }
+
+         };
+
+         eq2grau.a = 1;
+         eq2grau.b = -2;
+         eq2grau.c = 1;
+         
+         var raizes = eq2grau.extrairRaizes();
+         
+         // length contém a quantidade de raízes retornadas
+         switch(raizes.length) {
+            case 1:
+               document.write('Uma única raiz foi encontrada: ' + raizes[0]);
+               break;
+
+            case 2:
+               document.write('Duas raízes encontradas: ' + raizes[0] + ' e ' +
+                  raizes[1]);
+               break;
+
+            default:
+               document.write('Nenhuma raiz possível (delta negativo)');
+               
+         }
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

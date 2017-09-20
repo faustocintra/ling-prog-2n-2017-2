@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         // Objeto -> sempre é delimitado por chaves
+         var endereco = {
+            tipoLogradouro: 'Av.',
+            nomeLogradouro: 'Principal',
+            numImovel: 5420,
+            complemento: undefined,
+            bairro: 'Centro',
+            municipio: 'Morro Alto de Cima',
+            uf: 'MG',
+            cep: '39909-000',
+
+            imprimirEndereco: function(quebraLinhaDepois) {
+               
+               document.write(this.tipoLogradouro + ' ' + this.nomeLogradouro +
+                  ', ' + this.numImovel);
+
+               if(this.complemento != undefined) {
+                  document.write(' - ' + this.complemento);
+               }
+
+               document.write('<br />');
+
+               document.write(this.bairro + '<br />');
+
+               document.write(this.municipio + '/' + this.uf + '<br />');
+
+               document.write(this.cep);
+
+               if(quebraLinhaDepois) {
+                  document.write('<br />');
+               }
+
+            }
+
+         };
+
+         endereco.complemento = 'Sala 202';
+         endereco.nomeLogradouro = 'do Sobe e Desce';
+         endereco.numImovel = 44;
+         endereco.imprimirEndereco(false);
+         document.write('-----------------------------------<br />');
+
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
