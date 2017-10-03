@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         function podeSomar(n) {
+            /*
+            if(n % 3 == 0 || n % 5 == 0 || n % 7 == 0) {
+               return true;
+            }
+            else {
+               return false;
+            }
+            */
+            return n % 3 == 0 || n % 5 == 0 || n % 7 == 0;
+         }
+
+         var resultado = 0;
+         var num;
+
+         do {
+
+            num = parseInt(prompt('Informe um número: '));
+
+            // isNaN(): verdadeiro se a variável NÃO FOR um número
+            if(!isNaN(num)) {
+               if(podeSomar(num)) {
+                  resultado += num;
+               }
+               else {
+                  resultado -= num;
+               }
+            }
+
+         } while(num != 0);
+
+         document.write('O resultado é ' + resultado);
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

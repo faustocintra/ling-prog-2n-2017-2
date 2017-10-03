@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         function somaPares(v) {
+            var soma = 0;
+            for(var i = 0; i < v.length; i++) {
+               if(v[i] % 2 == 0) {
+                  soma += v[i];
+               }
+            }
+            return soma;
+         }
+
+         var vet = []; // var vet = new Array();
+         var num;
+
+         do {
+
+            num = parseInt(prompt('Informe um número: '));
+
+            if(!isNaN(num)) {
+               vet.push(num);
+            }
+
+         } while(num >= 0);
+
+         var res = somaPares(vet);
+
+         alert('A soma dos números pares é ' + res);
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

@@ -52,6 +52,28 @@
          // a ser substituída deve vir entre /barras/
          console.log('replace(/roupa/, "rapadura"): ' + str.replace(/roupa/, 'rapadura'));
 
+         // ---- CARACTERES ESPECIAIS (ou CARACTERES DE ESCAPE) ---
+         
+         // \n: Gera uma quebra de linha (NÃO funciona dentro de document.write())
+         console.log('Primeira linha\nSegunda linha');
+
+         // \': Para escrever uma aspa simples dentro de uma string delimitada
+         // por aspas simples
+         console.log('caixa d\'água');
+
+         // \": Para escrever uma aspa dupla dentro de uma string delimitada
+         // por aspas duplas
+         console.log("O quadro \"A Monalisa\" foi pintado por Leonardo Da Vinci");
+
+         // \\: Para escrever uma barra invertida
+         console.log("C:\\Windows\\System32\\calc.exe");
+
+         // \t: Insere um caractere de tabulação
+         console.log('Valor\t56,00');
+
+         // \b: Apaga o caractere imediatamente anterior a ele (backspace)
+         console.log('O masculino de "Professora" é "Professora\b"');
+
          
       </script>
 
