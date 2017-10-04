@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         function strInverter(str) {
+
+            var inv = ''; // String vazia
+            
+            // Percorre a string original de trás para frente
+            for(var i = str.length - 1; i >= 0; i--) {
+               inv += str.charAt(i);
+            }
+
+            return inv;
+
+         }
+
+         function strInverter2(str) {
+            // split(''): divide a string em um vetor de caracteres
+            // reverse(): inverte a ordem dos elementos do vetor
+            // join(''): transforma o vetor de volta em string
+            return str.split('').reverse().join('');
+         }
+
+         function strSemVogais(str) {
+
+            var res = '';
+
+            for(var i = 0; i < str.length; i++) {
+
+               switch(str.charAt(i)) {
+                  case 'a': 
+                  case 'A': 
+                  case 'e':
+                  case 'E':
+                  case 'i':
+                  case 'I':
+                  case 'o':
+                  case 'O':
+                  case 'U':
+                  case 'u':
+                     // Não faz nada
+                     break;
+
+                  default:
+                     res += str.charAt(i);
+               }
+
+            }
+
+            return res;
+
+         }
+
+         function strSemVogais2(str) {
+
+            var res = '';
+            var vogais = ['a',
+             'e', 'i', 'o', 'u'];
+            var letra;
+
+            for(var i = 0; i < str.length; i++) {
+
+               letra = str.charAt(i);
+
+               // vetor.indexOf(): retorna a posição de um elemento
+               // dentro do vetor ou -1 se o elemento não existir no vetor
+               if(vogais.indexOf(letra.toLowerCase()) < 0) {
+                  res += letra;
+               }   
+
+            }
+
+            return res;
+
+         }
+
+         function strSemVogais3(str) {
+            // replace() com expressão regular
+            return str.replace(/(a|e|i|o|u|A|E|I|O|U)/g, '');
+         }
+
+         function strTrocaVogais(str) {
+
+            var res = '';
+
+            for(var i = 0; i < str.length; i++) {
+
+               switch(str.charAt(i).toLowerCase()) {
+                  case 'a':
+                     res += '1';
+                     break;
+
+                  case 'e':
+                     res += '2';
+                     break;
+
+                  case 'i':
+                     res += '3';
+                     break;
+
+                  case 'o':
+                     res += '4';
+                     break;
+
+                  case 'u':
+                     res += '5';
+                     break;
+
+                  default:
+                     res += str.charAt(i);
+
+               }
+
+            }
+
+            return res;
+
+         }
+
+         function strTrocaVogais2(str) {
+
+            var res = '';
+            var vogais = ['a', 'e', 'i', 'o', 'u'];
+
+            for(var i = 0; i < str.length; i++) {
+               var pos = vogais.indexOf(str.charAt(i).toLowerCase());
+               
+               // Se achou a letra no vetor, ela será substituída
+               // pela sua posição + 1 na string gerada
+               if(pos >= 0) {
+                  res += (pos + 1);
+               }
+               else {
+                  res += str.charAt(i);
+               }
+            }
+
+            return res;
+
+         }
+
+         document.write(strInverter('O rato roeu a roupa do rei de Roma') + '<br />');
+         document.write(strInverter2('O rato roeu a roupa do rei de Roma')+ '<br />');
+
+         document.write(strSemVogais('O rato roeu a roupa do rei de Roma') + '<br />');
+         document.write(strSemVogais2('O rato roeu a roupa do rei de Roma') + '<br />');
+         document.write(strSemVogais3('O rato roeu a roupa do rei de Roma') + '<br />');
+
+         document.write(strTrocaVogais('O rato roeu a roupa do rei de Roma') + '<br />');
+         document.write(strTrocaVogais2('O rato roeu a roupa do rei de Roma') + '<br />');
+         
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
