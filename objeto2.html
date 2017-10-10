@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         // OBJETOS
+
+         // Objeto vazio é declarado com chaves
+         // Não confunda com vetor vazio, [] (colchetes)
+         var obj1 = {}; 
+
+         // Objeto com duas propriedades
+         var obj2 = {
+            nome: 'Serafim',
+            idade: 46
+         };
+
+         // JSON.stringify(): converte um objeto em string
+         console.log(JSON.stringify(obj1));
+         console.log(JSON.stringify(obj2));
+
+         // Propriedades podem ser acrescentadas a objetos a qualquer momento
+         obj1.marca = 'Fusca'; // obj1 não tinha nenhuma propriedade
+         obj2.fumante = false; // obj2 ganhou uma nova propriedade
+
+         // Propriedades podem ser acessadas com o ponto(.), como acima, ou
+         // colocando seu nome entre colchetes e aspas (simples ou duplas)
+         obj2['nome'] = 'Serafim de Souza'; // alterada a propriedade 'nome' de obj2
+
+         // Propriedades também podem ter espaços e acentos em seu nome.
+         // Nesse caso, só podem ser acessadas pela sintaxe de colchetes
+         obj1['número de lugares'] = 5;
+
+         console.log(JSON.stringify(obj1));
+         console.log(JSON.stringify(obj2));
+
+         // Objetos podem conter outros objetos
+         obj2.carro = obj1;
+
+         // Objetos podem conter vetores
+         obj2.empregos = ['Encanador', 'Eletricista', 'Pedreiro'];
+
+         console.log(JSON.stringify(obj2));
+         console.log(obj2);
+
+         // Exibindo a marca do carro do Serafim
+         console.log(obj2.carro.marca);
+         console.log(obj2['carro'].marca);
+         console.log(obj2['carro']['marca']);
+         console.log(obj2.carro['marca']);
+
+         // A sintaxe do colchete permite também que o nome da propriedade
+         // esteja dentro de variáveis
+         var prop1 = 'carro';
+         var prop2 = 'marca';
+
+         console.log(obj2[prop1][prop2]);
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
