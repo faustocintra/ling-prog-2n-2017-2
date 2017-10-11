@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var obj = {}; // Objeto vazio
+
+         var nomeProp, valorProp;
+
+         do {
+            nomeProp = prompt('Nome da propriedade');
+
+            if(nomeProp != '') {
+               valorProp = prompt('Valor da propriedade');
+               obj[nomeProp] = valorProp;
+            }
+
+         } while(nomeProp != '');
+
+         document.write(JSON.stringify(obj));
+         //document.write(obj);
+         //alert(obj);
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var carro = {
+            marca: 'Fiat',
+            modelo: '147C',
+            'número de rodas': 4,
+            'combustível': 'álcool'
+         };
+
+         // Exibindo manualmente as propriedades e valores de um objeto
+         document.write('DADOS DO CARRO:<br />');
+         document.write('marca: ' + carro.marca + '<br />');
+         document.write('modelo: ' + carro.modelo + '<br />');
+         document.write('número de rodas: ' + carro['número de rodas'] + '<br />');
+         document.write('combustível: ' + carro['combustível'] + '<br />');
+
+         // Usando um loop para exibir as propriedades e valores do objeto
+         document.write('<br />DADOS DO CARRO:<br />');
+         // for(var [VARIÁVEL] in [OBJETO])
+         for(var prop in carro) {
+            document.write(prop + ': ' + carro[prop] + '<br />');
+         }
+
+         // Continuará havendo um único objeto, que também poderá
+         // ser chamado de carro2
+         var carro2 = carro;
+
+         carro2.marca = 'Lamborghini';
+         carro2.modelo = 'Aventador';
+         carro2['combustível'] = 'gasolina';
+
+         var carro3 = {};
+
+         // Clonando um objeto, propriedade a propriedade
+         for(var p in carro) {
+            carro3[p] = carro[p];
+         }
+         
+         carro3.marca = 'Romi';
+         carro3.modelo = 'Isetta';
+         carro3['número de rodas'] = 3;
+         carro3['combustível'] = 'gasolina';
+
+         // Clonando um objeto, usando JSON.stringify() e JSON.parse(),
+         // convertendo o objeto para string e, em seguida, de volta
+         // para objeto
+         var carro4 = JSON.parse(JSON.stringify(carro));
+
+         carro4.marca = 'Hyundai';
+         carro4.modelo = 'Veloster';
+         delete carro4['número de rodas']; // Apaga a propriedade do objeto
+         carro4['nº de portas'] = 3;
+
+         document.write('<br />carro4: ' + JSON.stringify(carro4) + '<br />');
+         document.write('<br />carro3: ' + JSON.stringify(carro3) + '<br />');
+         document.write('<br />carro2: ' + JSON.stringify(carro2) + '<br />');
+         document.write('<br />carro: '+ JSON.stringify(carro) + '<br />');
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
