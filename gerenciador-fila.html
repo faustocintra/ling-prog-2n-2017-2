@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var fila = [
+            { nome: 'João', idade: 67 },
+            { nome: 'Mariângela', idade: 42 },
+            { nome: 'Pafúncio', idade: 59 },
+            { nome: 'Margarida', idade: 33 },
+            { nome: 'Jacira', idade: 38 }
+         ];
+
+         /* Escreva uma função que receba um vetor de objetos e
+            exiba em uma caixa de mensagens a fila, mostrando o 
+            nome e a idade das pessoas que aguardam
+         */
+         function mostraFila(f) {
+            var msg = '';
+            msg = 'SITUAÇÃO ATUAL DA FILA\n';
+            for(var i = 0; i < f.length; i++) {
+               msg += f[i].nome + ', ' + f[i].idade + '\n';
+            }
+            alert(msg);
+         }
+
+         mostraFila(fila);
+
+         /* Faça um loop infinito que obtenha do usuário o nome e a idade
+            de uma pessoa a ser colocada na fila. Se a idade >= 60, a pessoa
+            entrará na frente da fila. Se o nome for 'SAIR', o loop encerra.
+            Se o nome for 'ATENDER', retira a primeira pessoa da fila e a mostra.
+         */
+         // Loop infinito
+         
+         function inserirPreferencial(f, p) {
+
+            var encontrou = false;
+
+            for(var i = 0; i < f.length; i++) {
+               // Procura pela posição do primeiro não-preferencial
+               if(f[i].idade < 60) {
+                  // Se achou, insere o preferencial na posição encontrada
+                  f.splice(i, 0, p);
+                  encontrou = true;
+                  break;
+               }
+            }
+
+            // Não encontrou nenhum não-preferencial na fila, vai para o fim da fila
+            if(!encontrou) {
+               f.push(p);
+            }
+
+         }
+
+         for(;;) {
+
+            var pessoa = {};
+
+            pessoa.nome = prompt('Nome: ');
+
+            if(pessoa.nome == 'SAIR') {
+               break;
+            }
+            else if(pessoa.nome == 'ATENDER') {
+               // Retira a pessoa do início da fila
+               fila.shift();
+               mostraFila(fila);
+            }
+            else {
+
+               pessoa.idade = parseInt(prompt('Idade:'));
+
+               pessoa.idade >= 60 ? inserirPreferencial(fila, pessoa) : fila.push(pessoa);
+
+               mostraFila(fila);
+
+            }
+
+         }
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

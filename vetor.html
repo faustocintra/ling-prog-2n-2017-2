@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var vet = ['A', 'B', 'C', 'D', 'E'];
+         console.log('Vetor inicial:');
+         console.log(vet.toString());
+
+         // Adicionando um elemento ao final do vetor
+         vet.push('F');
+         console.log("Após vet.push('F'):");
+         console.log(vet.toString());
+
+         // Adicionando um elemento no início do vetor
+         vet.unshift('C');
+         console.log("Após unshift('C'):");
+         console.log(vet.toString());
+
+         // Adicionando mais um elemento no início do vetor
+         vet.unshift('F');
+         console.log("Após unshift('F'):");
+         console.log(vet.toString());
+
+         // Adicionando um elemento em uma posição específica do vetor
+         // 1º parâmetro: a posição desejada (contando a partir de 0)
+         // 2º parâmetro: quantos itens serão apagados depois (0 = nenhum)
+         // 3º parâmetro: o item a ser inserido
+         vet.splice(3, 0, 'X');
+         console.log("Após vet.splice(3, 0, 'X'):");
+         console.log(vet.toString());
+
+         // Removendo um elemento do início do vetor e colocando no final
+         vet.push(vet.shift());
+         console.log("Após vet.push(vet.shift()):");
+         console.log(vet.toString());
+
+         // Procurando pela posição da primeira ocorrência da letra 'C'
+         console.log("vet.indexOf('C'):");
+         console.log(vet.indexOf('C'));
+
+         // Procurando pela posição da última ocorrência da letra 'C'
+         console.log("vet.lastIndexOf('C'):");
+         console.log(vet.lastIndexOf('C'));
+
+         // Procurando pela posição da primeira ocorrência da letra 'K'
+         console.log("vet.indexOf('K'):");
+         console.log(vet.indexOf('K'));
+
+         // Removendo um elemento do final e colocando-o no início
+         vet.unshift(vet.pop());
+         console.log("Após vet.unshift(vet.pop()):");
+         console.log(vet.toString());
+
+         // Fatiando um vetor: slice()
+         // 1º parâmetro: o índice do primeiro elemento que entra na fatia
+         // 2º parâmetro (opcional): o índice do primeiro elemento QUE NÃO entra na fatia.
+         // Se omitido, a fatia vai até o final do vetor
+         console.log("vet.slice(3, 7):");
+         console.log(vet.slice(3, 7).toString());
+
+         console.log("vet.slice(5):");
+         console.log(vet.slice(5).toString());
+
+         // Consultando o número de elementos de um vetor
+         console.log("(Número de elementos do vetor) vet.length:");
+         console.log(vet.length);
+
+         // Os elementos de um vetor podem ser objetos
+         var fila = [
+            {nome: 'João', idade: 67},
+            {nome: 'Mariângela', idade: 42},
+            {nome: 'Pafúncio', idade: 59},
+            {nome: 'Margarida', idade: 33},
+            {nome: 'Jacira', idade: 38}
+         ];
+         
+         for(var i = 0; i < fila.length; i++) {
+            console.log(JSON.stringify(fila[i]));
+         }
+
+         console.log(fila);
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
