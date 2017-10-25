@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         var pessoas = [
+            {sobrenome: 'Carvalho', nome: 'Antenor', anoNasc: 1958, masculino: true},
+            {sobrenome: 'Galhardo', nome: 'Marta', anoNasc: 2004, masculino: false},
+            {sobrenome: 'Tavares', nome: 'Lucimeire', anoNasc: 1991, masculino: false},
+            {sobrenome: 'Antunes', nome: 'Jerônimo', anoNasc: 1970, masculino: true},
+            {sobrenome: 'Marques', nome: 'Heitor', anoNasc: 2011, masculino: true},
+            {sobrenome: 'Valentini', nome: 'Fernanda', anoNasc: 2002, masculino: false},
+            {sobrenome: 'Ramalho', nome: 'Danúbia', anoNasc: 1998, masculino: false},
+            {sobrenome: 'Magalhães', nome: 'Yara', anoNasc: 1995, masculino: false},
+            {sobrenome: 'Silveira', nome: 'Carlos', anoNasc: 2006, masculino: true},
+            {sobrenome: 'Duarte', nome: 'Luciano', anoNasc: 1989, masculino: true}
+         ];
+
+         // Escreva uma função que, recebendo UMA das pessoas do vetor, exiba seu nome
+         // completo e sua idade
+         function exibirDetalhes(pessoa, pos, vet) {
+            var hoje = new Date();
+            var anoAtual = hoje.getFullYear();
+            
+            document.write('Posição: ' + pos + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + 
+               ', idade: ' + (anoAtual - pessoa.anoNasc) + '<br />');
+         }
+
+         // Escreva um loop que invoque a função acima para cada um dos elementos
+         // do vetor pessoas.
+         for(var i = 0; i < pessoas.length; i++) {
+            exibirDetalhes(pessoas[i], i, pessoas);
+         }
+
+         // Passando um traço horizontal
+         document.write('<hr />');
+         document.write('USANDO forEach():<br />')
+
+         /*
+            forEach() espera, como parâmetro, uma função que receba ATÉ 3 parâmetros:
+            1º parâmetro: o elemento da vez
+            2º parâmetro: a posição do elemento da vez
+            3º parâmetro: o próprio vetor
+         */
+         pessoas.forEach(exibirDetalhes);
+
+         // Passando um traço horizontal
+         document.write('<hr />');
+         document.write('USANDO forEach() com função embutida:<br />');
+
+         // Função anônima
+         pessoas.forEach(function(pessoa, pos) {
+            var hoje = new Date();
+            var anoAtual = hoje.getFullYear();
+
+            document.write('Posição: ' + pos + ' ' + pessoa.nome + ' ' + pessoa.sobrenome +
+               ', idade: ' + (anoAtual - pessoa.anoNasc) + '<br />');            
+
+         });
+
+         // Crie um outro vetor (subvetor) contendo apenas os menores de 18 anos
+
+         // Passando um traço horizontal
+         document.write('<hr />');
+         document.write('Filtrando o vetor manualmente:<br />');
+
+         var menores = [];
+         pessoas.forEach(function(pessoa) {
+            var hoje = new Date();
+            var anoAtual = hoje.getFullYear();
+
+            if(anoAtual - pessoa.anoNasc < 18) {
+               menores.push(pessoa);
+            }
+         });
+
+         document.write(JSON.stringify(menores));
+        
+         // Passando um traço horizontal
+         document.write('<hr />');
+         document.write('Filtrando o vetor usando filter():<br />');
+         
+         // filter() recebe uma função cujo único parâmetro é um elemento
+         // do vetor que está sendo filtrado
+         menores = pessoas.filter(function(pessoa) {
+            var hoje = new Date();
+            var anoAtual = hoje.getFullYear();           
+            
+            // Entra no vetor filtrado aquilo cuja condição retorne verdadeiro
+            return anoAtual - pessoa.anoNasc < 18;
+         });
+
+         document.write(JSON.stringify(menores));
+
+         document.write('<hr />');
+
+         // Crie um novo vetor (subvetor) apenas com as pessoas do sexo feminino, usando filter()
+         var feminino = pessoas.filter(function(pessoa) {
+            return !pessoa.masculino; // pessoa.masculino == false;
+         });
+
+         document.write(JSON.stringify(feminino));
+
+         // Crie uma matriz em que as mulheres ocupem a fila superior
+         // e os homens, a fila inferior (2 x 5)
+         var matriz = [[], []]; // Um vetor contendo dois outros vetores
+
+         pessoas.forEach(function(pessoa) {
+            // Homens vão para a 2ª fila
+            if(pessoa.masculino) {
+               // matriz[1] acessa o segundo vetor
+               matriz[1].push(pessoa);
+            }
+            else {
+               // matriz[0] acessa o primeiro vetor
+               matriz[0].push(pessoa);
+            }
+         });
+
+         document.write('<hr />');
+
+         // Abre a tabela
+         document.write('<table style="border-collapse: collapse">');
+
+            for(var lin = 0; lin < matriz.length; lin++) {
+               document.write('<tr>'); // Abre linha
+               for(var col = 0; col < matriz[lin].length; col++) {
+                  document.write('<td style="border: 1px solid black">'); // Abre célula (coluna)
+                  document.write(matriz[lin][col].nome + ' ' + matriz[lin][col].sobrenome);
+                  document.write('</td>'); // Fecha célula (coluna)
+               }
+               document.write('</tr>'); // Fecha linha
+            }
+
+         // Fecha a tabela
+         document.write('</table>');
+
+         document.write('<hr />');
+
+         // Crie um novo vetor contendo apenas o nome completo de cada uma das pessoas
+         document.write('CRIANDO UM NOVO VETOR A PARTIR DE DADOS DE UM OUTRO VETOR<br />');
+         var nomes = [];
+         pessoas.forEach(function(pessoa) {
+            nomes.push(pessoa.nome + ' ' + pessoa.sobrenome);
+         });
+
+         document.write(JSON.stringify(nomes));
+
+         document.write('<hr />');
+
+         // Crie um novo vetor contendo apenas o nome completo de cada uma das pessoas
+         document.write('AGORA USANDO map():<br />');
+         
+         // map(): mapeia cada elemento de um vetor para um elemento de um outro vetor
+         var nomes2 = pessoas.map(function(pessoa) {
+            return pessoa.nome + ' ' + pessoa.sobrenome;      
+         });
+
+         document.write(JSON.stringify(nomes2));
+
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
