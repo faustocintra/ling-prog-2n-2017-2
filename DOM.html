@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+      <p>Este é o segundo parágrafo de texto.</p>
+
+      <h2>Linguagens de programação mais populares</h2> <!-- h2 = header 2, cabeçalho de segundo nível -->
+      <ol> <!-- ol = ordered list, lista ordenada -->
+         <li>Javascript</li> <!-- li = list item, item da lista -->
+         <li>Java</li>
+         <li>Python</li>
+         <li>PHP</li>
+         <li id="csharp">C#</li>
+         <li>Swift</li>
+      </ol>
+
+      <script type="text/javascript">
+
+         // Quantos elementos filhos tem o body?
+         alert('Elementos filhos de body: ' + document.body.children.length);
+
+         // Quantos nós filhos tem o body?
+         alert('Nós filhos de body: ' + document.body.childNodes.length);
+
+         // children conta apenas os elementos formalmente definidos dentro do pai
+         var str = '';
+         for (var i = 0; i < document.body.children.length; i++) {
+            str += document.body.children[i].tagName + '\n';
+         }
+
+         alert('Elementos filhos:\n' + str);
+
+         // childNodes considera, além dos elementos, espaços em branco e textos que
+         // não estejam inseridos dentro de nenhuma tag
+         str = '';
+         for (var i = 0; i < document.body.childNodes.length; i++) {
+            str += document.body.childNodes[i].tagName + ' => ' + 
+               document.body.childNodes[i].innerHTML + '\n';
+         }
+
+         alert('Nós filhos:\n' + str);
+
+         // firstChild e lastChild consideram, sempre, o primeiro e o último NÓS
+         // (não o primeiro e o último elementos)
+
+         // Primeiro nó dentro de body
+         alert('Primeiro nó de body: ' + document.body.firstChild.tagName);
+
+         // Último nó dentro de body
+         alert('Último nó de body: ' + document.body.lastChild.tagName);
+
+         // Primeiro ELEMENTO dentro de body
+         alert('Primeiro ELEMENTO de body: ' + document.body.firstElementChild.tagName);
+
+         // Último ELEMENTO dentro de body
+         alert('Último ELEMENTO de body: ' + document.body.lastElementChild.tagName);
+
+         // IMPORTANTE: getElementsByTagName (NOTE O PLURAL Elements) sempre gera, como
+         // resultado, um vetor, mesmo que não ache nenhum elemento ou apenas um elemento
+         // da tag informada
+         var parags = document.body.getElementsByTagName('p');
+
+         // Isolamos o primeiro parágrafo (note a contagem começando em zero)
+         var p1 = parags[0];
+
+         p1.innerHTML = "ISTO É O PRIMEIRO PARÁGRAFO, MODIFICADO.";
+
+         // Mesmo que haja apenas um elemento da tag informada, o resultado
+         // será um vetor com um único elemento
+         var headers1 = document.body.getElementsByTagName('h1');
+
+         // Isolando o primeiro h1
+         var h1_1 = headers1[0];
+
+         h1_1.innerHTML = "Parque de diversões do DOM";
+
+         // Acessando um elemento diretamente. getElementById retorna
+         // um único elemento, ou undefined, se não conseguir achar.
+         // Como o atributo id deve único dentro de um documento HTML,
+         // getElementById pode ser usado diretamente a partir de document.
+         var csharp = document.getElementById('csharp');
+
+         csharp.innerHTML = 'C# (tecnologias .NET)';
+
+      </script>      
+   </body>
+
+</html>

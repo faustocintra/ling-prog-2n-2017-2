@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+      <p>Este é o segundo parágrafo de texto.</p>
+
+      <h2>Linguagens de programação mais populares</h2> <!-- h2 = header 2, cabeçalho de segundo nível -->
+      <ol id="lista"> <!-- ol = ordered list, lista ordenada -->
+         <li id="js">Javascript</li> <!-- li = list item, item da lista -->
+         <li id="java">Java</li>
+         <li id="python">Python</li>
+         <li id="php">PHP</li>
+         <li id="csharp">C#</li>
+         <li id="swift">Swift</li>
+      </ol>
+
+      <script type="text/javascript">
+
+         // Acessando um elemento diretamente. getElementById retorna
+         // um único elemento, ou undefined, se não conseguir achar.
+         // Como o atributo id deve único dentro de um documento HTML,
+         // getElementById pode ser usado diretamente a partir de document.
+         var csharp = document.getElementById('csharp');
+
+         csharp.innerHTML = 'C# (tecnologias .NET)';
+
+         /* Colocando a linguagem C em segundo lugar da lista */
+
+         // Obtendo a lista
+         var lista = document.getElementById('lista');
+
+         // Criando um novo elemento
+         var lingc = document.createElement('li');
+
+         // Localizando a linguagem Java. C entrará antes dela
+         var java = document.getElementById('java');
+
+         // A inserção do novo elemento no DOM deve ocorrer _antes_
+         // do ajuste de qualquer de suas propriedades
+         lista.insertBefore(lingc, java);
+            
+         lingc.id = 'lingc';
+         lingc.innerHTML = 'C';
+
+         /* Colocando novos itens no fim da lista */
+         
+         var ruby = document.createElement('li');
+         lista.appendChild(ruby);
+         ruby.id = 'ruby';
+         ruby.innerHTML = 'Ruby';
+
+         var delphi = document.createElement('li');
+         lista.appendChild(delphi);
+         delphi.id = 'delphi';
+         delphi.innerHTML = 'Delphi/Object Pascal';
+
+         /* Removendo itens da lista */
+
+         // 1) Via acesso direto por id
+         lista.removeChild(document.getElementById('swift'));
+
+         // 2) Por posição (neste caso, a terceira - a contagem começa em zero)
+         lista.removeChild(document.getElementsByTagName('li')[2]);
+
+         /* Trocando um elemento por outro */
+         
+         var vbdotnet = document.createElement('li');
+         
+         // Troca Ruby por VB.NET
+         lista.replaceChild(vbdotnet, ruby);
+
+         vbdotnet.id = 'vbdotnet';         
+         vbdotnet.innerHTML = 'VB.NET';
+
+      </script>      
+   </body>
+
+</html>
