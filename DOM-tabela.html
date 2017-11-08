@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+   <script type="text/javascript">
+
+      var letras = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
+      var pos = 0;
+
+      var tabela = document.createElement('table');
+      // Retira o espaçamento entre as células da tabela
+      tabela.setAttribute('style', 'border-collapse: collapse');
+      document.body.appendChild(tabela);
+
+      for(var l = 0; l < 5; l++) {
+         var linha = document.createElement('tr');
+         tabela.appendChild(linha);
+
+         for(var c = 0; c < 5; c++) {
+            var celula = document.createElement('td');
+            celula.setAttribute('style', 
+               'border: 1px solid blue; padding: 4px; text-align: center; vertical-align: middle');
+            celula.innerHTML = letras.charAt(pos);
+            pos++;
+            linha.appendChild(celula);
+         }
+      }
+
+   </script>
+
+</html>
