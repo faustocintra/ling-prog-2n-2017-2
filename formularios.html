@@ -40,7 +40,9 @@
                maxlength: número máximo de caracteres aceitos
             -->
             <input type="text" id="ex_texto" size="100" maxlength="30" 
-               placeholder="Digite alguma coisa aqui" />
+               placeholder="Digite alguma coisa aqui" value="Texto explicativo" />
+            <br />
+            <input type="text" id="ex_texto_readonly" value="Este campo é somente-leitura" readonly />
          </div>
 
          <div>
@@ -109,6 +111,34 @@
             <label for="ex_datetime">Dia/hora da consulta:</label><br />
             <input type="datetime-local" id="ex_datetime" name="agendamento_consulta"
                max="2017-11-14 23:00" required />
+         </div>
+
+         <div>
+            <label for="ex_email">E-mail:</label><br />
+            <input type="email" id="ex_email" name="email" placeholder="Digite seu e-mail aqui" />
+         </div>
+
+         <div>
+            <label for="ex_range">Como está seu humor hoje?</label><br />
+            <span>Ótimo</span>
+            <input type="range" id="ex_range" name="humor" min="0" max="100" step="2" />
+            <span>Péssimo</span>
+         </div>
+
+         <div>
+            <label for="ex_search">O que você procura?</label><br />
+            <input type="search" id="ex_search" name="busca" 
+               placeholder="Informe seus termos de busca" />
+         </div>
+
+         <div>
+            <label for="ex_textarea">Deixe seu comentário:</label><br />
+            <!--
+               cols: largura da área de texto, em número de caracteres
+               rows: altura da área de texto, em número de linhas
+            -->
+            <textarea id="ex_textarea" name="comentario" cols="80" rows="7" maxlength="300"
+               placeholder="Sugestões, críticas, elogios...">Lorem ipsum dkfdfjdsf dskfj</textarea>
          </div>
 
          <div style="text-align:center">
