@@ -9,6 +9,22 @@
          
       </script>
 
+      <style type="text/css">
+      
+         body {            
+            width: 80%; /* A largura será de 80% da largura da janela */
+            margin: 0 auto; /* O primeiro valor se aplica a top e bottom; o segundo, a left e right */
+         }
+         
+         div {
+            border: 1px solid lightgray;
+            border-radius: 10px; /* Arredonda os cantos das bordas */
+            padding: 10px; /* Espaçamento interno que vale para os quatro lados */
+            margin-bottom: 20px; /* Espaçamento externo no lado de baixo */
+         }
+
+      </style>
+
    </head>
 
    <body>
@@ -18,7 +34,7 @@
       <form>
 
          <div>
-            <label title="Isto é um texto explicativo" for="ex_texto">Exemplo de entrada de texto</label>
+            <label title="Isto é um texto explicativo" for="ex_texto">Exemplo de entrada de texto</label><br />
             <!--
                size: tamanho físico do campo
                maxlength: número máximo de caracteres aceitos
@@ -28,8 +44,75 @@
          </div>
 
          <div>
-            <input type="checkbox" id="ex_checkbox" />
-            <label for="ex_checkbox">Exemplo de checkbox 1</label>
+            <input type="checkbox" id="ex_checkbox1" />
+            <label for="ex_checkbox1">Exemplo de checkbox 1</label>
+            <br />
+            <input type="checkbox" id="ex_checkbox2" />
+            <label for="ex_checkbox2">Exemplo de checkbox 2</label>
+            <br />
+            <input type="checkbox" id="ex_checkbox3" />
+            <label for="ex_checkbox3">Exemplo de checkbox 3</label>
+         </div>
+
+         <div>
+            <!-- O type "radio" é adequado quando as opções são
+               mutuamente exclusivas, isto é, apenas uma opção
+               pode estar selecionada num dado momento. 
+               O atributo "name" deve ser igual para todos os input radio
+               que pertencem a um mesmo grupo.
+            -->
+            <input type="radio" id="ex_radio1" name="cor" checked />
+            <label for="ex_radio1">Vermelho</label>
+            <br />
+            <input type="radio" id="ex_radio2" name="cor" />
+            <label for="ex_radio2">Amarelo</label>
+            <br />
+            <input type="radio" id="ex_radio3" name="cor" />
+            <label for="ex_radio3">Azul</label>
+         </div>
+
+         <div>
+            <label for="ex_select">Qual o maior fiasco das Eliminatórias da Copa 2018?</label><br />
+            <select id="ex_select" name="pais_fiasco">
+               <option value="">(Selecione)</option>
+               <option value="CA">Camarões</option>
+               <option value="CH">Chile</option>
+               <option value="EQ">Equador</option>
+               <option value="ES">Escócia</option>
+               <option value="EU">Estados Unidos</option>
+               <option value="PB">Países Baixos</option>
+               <option value="IR">Irlanda</option>
+               <option value="IT">Itália</option>
+               <option value="PA">Paraguai</option>
+            </select>
+         </div>
+
+         <div>
+            <label for="ex_number1">Qual a sua idade?</label><br />
+            <input type="number" id="ex_number1" name="idade" min="0" max="130" />
+            <br />
+            <label for="ex_number2">Nota:</label><br />
+            <!-- step: de quanto em quanto os botões irão saltar -->
+            <input type="number" id="ex_number2" name="nota" min="0" max="10" step="0.1" />
+         </div>
+
+         <div>
+            <!-- O navegador Mozilla Firefox, historicamente, exibe problemas
+               com os tipos date, time e datetime(-local). Use com cautela!
+            -->
+            <label for="ex_date">Data de nascimento:</label><br />
+            <input type="date" id="ex_date" min="1890-01-01" name="data_nascimento" />
+            <br />
+            <label for="ex_time">Horário de partida:</label><br />
+            <input type="time" id="ex_time" name="horario_partida" />
+            <br />
+            <label for="ex_datetime">Dia/hora da consulta:</label><br />
+            <input type="datetime-local" id="ex_datetime" name="agendamento_consulta"
+               max="2017-11-14 23:00" required />
+         </div>
+
+         <div style="text-align:center">
+            <input type="submit" value="Enviar" />
          </div>
 
       </form>
