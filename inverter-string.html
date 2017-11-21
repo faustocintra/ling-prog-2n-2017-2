@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+
+      <div>
+         <label for="str">String</label><br />
+         <input type="text" id="str" onkeydown="inverter(this)" />
+
+         <br />
+
+         <label for="res">String invertida</label><br />
+         <input type="text" id="res" readonly />
+      </div>
+
+      <script type="text/javascript">
+
+         function inverter() {
+
+            var str = document.getElementById('str').value;
+
+            var inv = str.split('').reverse().join('');
+
+            document.getElementById('res').value = inv;
+
+         }
+
+      </script>
+
+   </body>
+</html>
