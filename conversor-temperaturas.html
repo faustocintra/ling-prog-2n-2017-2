@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         
+      </script>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+
+      <div>
+         <label for="temp">Temperatura</label><br />
+         <input type="number" id="temp" step="0.01" onkeydown="converter(this)" />
+
+         <br />
+
+         <label for="conv">Converter</label><br />
+         <select id="conv" onchange="converter(this)">
+            <option value="1">De Celsius para Fahrenheit</option>
+            <option value="2">De Fahrenheit para Celsius</option>
+         </select>
+
+         <br />
+
+         <label for="resultado">Resultado</label><br />
+         <input type="number" id="resultado" readonly />
+
+      </div>
+
+      <script type="text/javascript">
+      
+         function converter() {
+            var temp = document.getElementById('temp').value;
+            var conv = document.getElementById('conv').value;
+
+            var resultado = 0;
+            
+            if(conv == 1) { // Celsius -> Fahrenheit
+               resultado = temp * 1.8 + 32;
+            }
+            else { // Fahrenheit -> Celsius
+               resultado = (temp - 32) / 1.8;
+            }
+
+            document.getElementById('resultado').value = resultado;
+
+         }
+
+      </script>
+
+   </body>
+</html>

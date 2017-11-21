@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Arquivo modelo HTML</title>
+
+      <script type="text/javascript">
+
+         
+      </script>
+
+      <style type="text/css">
+      
+         body {            
+            width: 80%; /* A largura será de 80% da largura da janela */
+            margin: 0 auto; /* O primeiro valor se aplica a top e bottom; o segundo, a left e right */
+         }
+         
+         div, fieldset {
+            border: 1px solid lightgray;
+            border-radius: 10px; /* Arredonda os cantos das bordas */
+            padding: 10px; /* Espaçamento interno que vale para os quatro lados */
+            margin-bottom: 20px; /* Espaçamento externo no lado de baixo */
+         }
+
+      </style>
+
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+
+      <form id="calculadora" onsubmit="return calcular(this)">
+
+         <div>
+            <label for="n1">Primeiro número</label><br />
+            <input type="number" id="n1" name="numero1" step="0.01" />
+            
+            <br />
+            
+            <fieldset>
+               <legend>Operação</legend>
+               
+               <input type="radio" id="op_adic" name="operacao" value="+" checked />
+               <label for="op_adic">Adição</label><br />
+
+               <input type="radio" id="op_subt" name="operacao" value="-" />
+               <label for="op_subt">Subtração</label><br />
+
+               <input type="radio" id="op_mult" name="operacao" value="*" />
+               <label for="op_mult">Multiplicação</label><br />
+
+               <input type="radio" id="op_divi" name="operacao" value="/" />
+               <label for="op_divi">Divisão</label>
+
+            </fieldset>
+
+            <br />
+
+            <label for="n2">Segundo número</label><br />
+            <input type="number" id="n2" name="numero2" step="0.01" />
+
+            <br />
+
+            <label for="res">Resultado</label><br />
+            <input type="number" id="res" name="resultado" readonly />
+         </div>
+
+         <div style="text-align:center">
+            <input type="submit" value="Calcular" />
+         </div>
+
+      </form>
+
+      <script type="text/javascript">
+      
+         function calcular(evento) {
+            
+            var form = document.getElementById('calculadora');
+
+            // Ao acessar os valores via form, deve-se usar a propriedade name
+            var num1 = parseFloat(form['numero1'].value);
+            var op = form['operacao'].value;
+            var num2 = parseFloat(form['numero2'].value);
+
+            var resultado = 0;
+
+            switch(op) {
+               case '+':
+                  resultado = num1 + num2;
+                  break;
+
+               case '-':
+                  resultado = num1 - num2;
+                  break;
+
+               case '*':
+                  resultado = num1 * num2;
+                  break;
+
+               default: // Divisão
+                  resultado = num1 / num2;
+
+            }
+
+            form['resultado'].value = resultado;
+
+            return false;
+
+         }
+      
+      </script>
+
+   </body>
+</html>
